@@ -3,8 +3,24 @@ import ellipse2 from "./assets/ellipse2.svg";
 import dottedLayer from "./assets/Camada_1.svg";
 import PageTitle from "./components/PageTitle";
 import SearchInput from "./components/SearchInput";
+import { useRef, useState } from "react";
+import { UserProfile } from "./components/UserProfile";
+import { useGitHubProfile } from "./hooks/useGithubProfile";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 export default function GitHubProfileLayout() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const [username, setUsername] = useState("");
+  const { data, isError, isLoading } = useGitHubProfile(username);
+
+  const handleSearch = () => {
+    const value = inputRef.current?.value.trim();
+    if (value) {
+      setUsername(value); // ativa a requisição
+    }
+  };
+
   return (
     <div className="relative w-full h-screen bg-[#1f1f1f] overflow-hidden flex justify-center items-center">
       {/* Fundo visual esquerdo */}
@@ -31,7 +47,28 @@ export default function GitHubProfileLayout() {
       {/* Container preto central */}
       <div className="z-10 bg-black w-[90%] max-w-[1156px] h-[80%] max-h-[537px] rounded-lg p-6 md:p-8 shadow-xl flex flex-col justify-start items-center">
         <PageTitle />
-        <SearchInput />
+        <SearchInput inputRef={inputRef} onSearch={handleSearch} />
+        {isLoading && <LoadingSpinner />}
+        {isError && (
+          <div className="mt-8 w-[710px] h-[88px] rounded-[10px] bg-[var(--color-gray-200)] flex flex-col justify-center items-center text-center border ">
+            <p className="text-[var(--color-red-primary)] text-xl font-normal">
+              Nenhum perfil foi encontrado com esse nome de usuário
+            </p>
+            <p className="text-[var(--color-red-primary)] text-xl font-normal">
+              Tente novamente
+            </p>
+          </div>
+        )}
+
+        {data && (
+          <div className="mt-8">
+            <UserProfile
+              avatarUrl={data.avatar_url}
+              name={data.name}
+              bio={data.bio}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
