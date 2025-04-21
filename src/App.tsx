@@ -1,6 +1,7 @@
 import ellipse1 from "./assets/ellipse1.svg";
 import ellipse2 from "./assets/ellipse2.svg";
 import dottedLayer from "./assets/Camada_1.svg";
+import PageTitle from "./components/PageTitle";
 
 export default function GitHubProfileLayout() {
   return (
@@ -27,8 +28,11 @@ export default function GitHubProfileLayout() {
       />
 
       {/* Container preto central */}
-      <div className="z-10 bg-black w-[90%] max-w-[1156px] h-[80%] max-h-[537px] rounded-lg p-6 md:p-8 shadow-xl flex flex-col justify-center items-center">
-        <p className="text-gray-400 text-xl text-center">Aguardando busca...</p>
+      <div className="z-10 bg-black w-[90%] max-w-[1156px] h-[80%] max-h-[537px] rounded-lg p-6 md:p-8 shadow-xl flex flex-col justify-start items-center">
+        <PageTitle></PageTitle>
+        <p className="text-gray-400 text-xl text-center  mt-4">
+          Aguardando busca...
+        </p>
       </div>
     </div>
   );
