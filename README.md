@@ -20,13 +20,26 @@ O **GitHub Profile Search** permite aos usuários buscar perfis do GitHub, exibi
 
 ## 🎨 **Tecnologias Utilizadas**
 
-- **React**
-- **TypeScript**
-- **TanStack Query**
-- **Framer Motion**
-- **Tailwind CSS**
-- **Axios**
+- **React**  
+  [→ Documentação oficial](https://react.dev/)
+- **TypeScript**  
+  [→ Documentação oficial](https://www.typescriptlang.org/docs/)
+- **TanStack Query**  
+  [→ Documentação oficial](https://tanstack.com/query/latest/docs/framework/react/community/tkdodos-blog#19-type-safe-react-query)
+- **Framer Motion**  
+  [→ Documentação oficial](https://www.npmjs.com/package/framer-motion)
+- **Tailwind CSS**  
+  [→ Documentação oficial](https://tailwindcss.com/docs)
+- **Axios**  
+  [→ Documentação oficial](https://axios-http.com/ptbr/docs/intro)
 - **Skeleton Loaders**
+
+### 📚 **Documentações de Apoio**
+
+- [GitHub REST API – Rate Limits (pt-BR)](https://docs.github.com/pt/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28)  
+- [GitHub REST API – Rate Limit (en)](https://docs.github.com/en/rest/rate-limit/rate-limit?apiVersion=2022-11-28)  
+- [GitHub REST API – Rate Limits (en)](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28)
+
 
 ---
 
