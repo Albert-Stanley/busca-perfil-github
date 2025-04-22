@@ -1,5 +1,7 @@
 # <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="30" height="30"/> **GitHub Profile Search**
 
+🌐 Acesse e teste o Projeto: [busca-perfil-github-one.vercel.app](https://busca-perfil-github-one.vercel.app)
+
 ## 📝 **Sobre o Projeto**
 
 O **GitHub Profile Search** permite aos usuários buscar perfis do GitHub, exibindo nome, foto de perfil e bio do usuário, com design inspirado no Figma. O projeto implementa o tratamento de **rate limit** da API do GitHub para garantir uma experiência fluida, mesmo com limitações de requisições.
