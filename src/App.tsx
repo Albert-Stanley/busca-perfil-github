@@ -45,6 +45,7 @@ export default function GitHubProfileLayout() {
           inputRef={inputRef}
           onSearch={handleSearch}
           isLoading={isLoading}
+          disabled={isLoading}
         />
         {isLoading && <SkeletonProfile />}
         {isError && !data && (
@@ -55,7 +56,7 @@ export default function GitHubProfileLayout() {
                 : "Nenhum perfil foi encontrado com esse nome de usuário"}
             </p>
             <p className="text-[var(--color-red-primary)] text-base sm:text-lg md:text-xl font-normal">
-              {error instanceof Error ? null : "Tente novamente"}
+              Tente novamente
             </p>
           </div>
         )}

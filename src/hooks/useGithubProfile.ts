@@ -51,7 +51,9 @@ export function useGitHubProfile(username: string) {
 
           switch (status) {
             case 404:
-              throw new Error("Usuário não encontrado.");
+              throw new Error(
+                "Nenhum perfil foi encontrado com esse nome de usuário"
+              );
             case 403:
               throw new Error(
                 "Você excedeu o limite de requisições da API do GitHub."

@@ -5,12 +5,14 @@ interface SearchInputProps {
   inputRef: React.RefObject<HTMLInputElement | null>;
   onSearch: () => void;
   isLoading: boolean;
+  disabled: boolean;
 }
 
 export default function SearchInput({
   inputRef,
   onSearch,
   isLoading,
+  disabled,
 }: SearchInputProps) {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") onSearch();
@@ -29,6 +31,7 @@ export default function SearchInput({
         type="button"
         className="bg-[var(--color-blue-primary)] px-4 py-3 flex items-center justify-center rounded-tr-[10px] rounded-[10px] hover:brightness-110 active:brightness-90 transition-all duration-200 cursor-pointer"
         onClick={onSearch}
+        disabled={disabled}
       >
         {isLoading ? (
           <FaSpinner className="animate-spin text-white w-5 h-5" />
