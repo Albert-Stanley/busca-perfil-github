@@ -21,11 +21,6 @@ export default function GitHubProfileLayout() {
     }
   };
 
-  // Resetar a mensagem de erro quando o nome de usuário for alterado
-  if (!isLoading && !isError && username) {
-    // Quando a pesquisa for bem-sucedida, remova a mensagem de erro
-  }
-
   return (
     <div className="relative w-full h-screen bg-[#1f1f1f] overflow-hidden flex justify-center items-center">
       <img
